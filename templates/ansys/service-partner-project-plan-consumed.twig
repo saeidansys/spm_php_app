@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ansys - Service Partner Portal</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/ansys_site.css" rel="stylesheet">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body style="background-color: #000000;">
+
+<div class="alert alert-danger">WIP</div>
+
+<div class="container-fluid mt-5 mb-5 p-3 rounded rounded-3" style="background-color: #ffffff; max-width: 90%;">
+
+    <div class="row">
+        <img src="/img/R.png" />
+    </div>
+
+    <div class="row">
+        <h1>Service Partner Portal - {{ spname }}</h1>
+    </div>
+
+    <div class="row">
+        <h1>Project Plan Consumed Upload for: {{ projectname }}</h1>
+    </div>
+
+    <div class="row w-25">
+        <div class="alert alert-info">Please upload the Consumed file for {{ projectname }}.</div>
+    </div>
+
+    <div class="row w-25">
+        <form method="post" action="#">
+            <label for="zipfile">Choose Excel file to upload</label>
+            <input type="file" id="zipfile" name="zipfile" accept=".xlsx">
+            <button class="btn btn-primary w-100 py-2 mt-1" type="submit">Upload</button>
+        </form>
+    </div>
+
+</div>
+
+<div id="loading-overlay">
+    <div id="loader-container" class="d-flex justify-content-center">
+        <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status"></div>
+    </div>
+</div>
+
+<script>
+
+    function showLoadingScreen(eventsender)
+    {
+        document.getElementById('loading-overlay').style.display = "block";
+    }
+
+    window.onunload = function() {
+        document.getElementById('loading-overlay').style.display = "none";
+    }
+
+</script>
+
+</body>
+</html>

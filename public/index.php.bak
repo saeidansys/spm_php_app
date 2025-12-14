@@ -1,0 +1,6 @@
+<?php
+echo"Successfully loaded the page!";
+echo "<hr><h2 style='color:green;'>Test from 10.2.12.55 - SSL check</h2>";
+phpinfo();
+?>
+
